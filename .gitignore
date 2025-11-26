@@ -10,5 +10,6 @@ wheels/
 .venv
 
 
-apps/*/**
-!apps/*/compose.yaml
+apps/*/_DRIVESET
+
+#!apps/*/compose.yaml
