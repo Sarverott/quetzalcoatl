@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  install:
+    cmds:
+      - apt update
+      - apt upgrade
+      - apt install git python3 python3-pip virtualbox openssh-server
+      - apt install bumblebee-nvidia primus-nvidia primus-vk-nvidia nvidia-smi nvidia-cuda-dev nvidia-cuda-toolkit
+      #- curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh -v
+      - curl -LsSf https://astral.sh/uv/install.sh | sh -v
+      - curl -fsSL https://ollama.com/install.sh | sh -v
+      - curl -fsSL https://get.docker.com | sh -v
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
